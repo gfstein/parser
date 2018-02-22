@@ -3,6 +3,7 @@ package com.ef;
 import com.ef.dao.AccessLogDao;
 import com.ef.model.AccessLog;
 import com.ef.model.IPLock;
+import com.sun.javaws.exceptions.ExitException;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -150,7 +151,11 @@ public class Parser {
                 System.out.println("no data found with the reported parameters");
             }
 
+        } else {
+            System.out.println("not all arguments set");
         }
+
+        System.exit(ExitException.OK);
 
     }
 
